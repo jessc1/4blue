@@ -46,27 +46,26 @@ const Chat = () => {
 
 
   return (
-    <div className='chat-container'>
-      <header className="App-header">
-        Chat Bot API
-      </header>
-      {messages.results && messages.results.map((msg) => (
-        <div key={msg.id} style={{ marginBottom: '10px'}}>
-          <p><strong>User:</strong>{msg.message}</p>
-          {msg.response && <p><strong>Bot:</strong>{msg.response}</p>}
-           <input 
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
-              placeholder='Envie uma mensagem...'
-              />
-            <button onClick={sendMessage}>Enviar</button>      
+       <div style={{ height: '400px', overflowY: 'scroll', border: '1px solid #ccc', padding: '10px' }}>
+        {messages.results && messages.results.map((msg) => (
+                <div key={msg.id} style={{ marginBottom: '10px' }}>
+                    <p><strong>User:</strong> {msg.message}</p>
+                    {msg.response && <p><strong>Bot:</strong> {msg.response}</p>}
+                </div>
+            ))}
+            <input
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
+                placeholder="Type a message..."
+            />
+            <button onClick={sendMessage}>Enviar</button>
         </div>
-      ))}
-       
-    </div>
-  ); 
+
+
+  ) 
+   
 };
 export default Chat;
 

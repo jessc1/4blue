@@ -15,10 +15,14 @@ const AppRoutes = () => {
 
 const App = () => {
   return (
-     
-    <BrowserRouter>
-      <AppRoutes />
-    </BrowserRouter>       
+    <div className='App'>
+      <header className='App-header'>
+        <h2>ChatBot API</h2>
+          <BrowserRouter>
+            <AppRoutes />
+        </BrowserRouter> 
+      </header>      
+    </div>          
    
   );
 }
