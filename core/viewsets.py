@@ -18,6 +18,8 @@ class ChatViewSet(viewsets.ModelViewSet):
        chat_response = f"Chat: Obrigada pela mensagem '{message}' Em breve Responderemos."         
        serializer.save(user=self.request.user, response=chat_response)
 
+     
+
     
             
        
