@@ -10,4 +10,11 @@ dependencies = [
     "django>=5.2.8",
     "django-cors-headers>=4.9.0",
     "djangorestframework>=3.16.1",
+    "pytest>=9.0.1",
+    "pytest-django>=4.11.1",
 ]
+
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "chat.settings"
+python_files = ["test_*.py","*tests.py"]

@@ -5,7 +5,7 @@ frameworks:  django, django rest framework, and react
 - para o design do chat, utilizei a entidade usuário para pegar o histórico de mensagens e tentei usar menos componentes no react.
 
 * To get access to the api and send a message http://127.0.0.1:8000/api/chat/   
-* To get the history of messages  http://127.0.0.1:8000/api/history/
+* To get the history of messages  http://127.0.0.1:8000/api/chat/
 * Front End chat  http://localhost:3000/chat/
 * Front End History http://localhost:3000/history/
 
@@ -14,7 +14,7 @@ commands:
 
  start the django server
 ```
- uv run --env-file .env python manage.py runserver
+ uv run python manage.py runserver
 ```
  start the react
 ```
@@ -23,10 +23,16 @@ commands:
 
  to create database migration
 ```
- uv run --env-file .env python manage.py  makemigrations
+ uv run  python manage.py  makemigrations
 ```
 
 applying  the migration
 ```
-uv run --env-file .env python manage.py migrate
+uv run python manage.py migrate
 ```
+
+to run the tests
+```
+uv run pytest
+```
+
